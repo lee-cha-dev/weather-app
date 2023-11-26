@@ -11,4 +11,7 @@ THIS WILL ALLOW FOR THE USE OF "COMPONENTS", AND WILL ALLOW FOR LESS REPETITIVE 
 
 END READ ME
 
-TEST TEXT
+------------------------------------------------
+
+IN ORDER TO GET THE APPLICATION TO WORK CREATE A FILE: js/config.js
+and set API_KEY = your API for open weather map
