@@ -2,13 +2,20 @@
 const aboutElements =
     "<div>" +
         Navbar() +
-    "   <section class='heading'>" +
-    "       <h1>Home Page</h1>" +
-    "       <p>Welcome to the Landing Page!</p>" +
-    "       <p>Thank you for using HTML-Injection</p>" +
+    "   <section class='weather-body'>" +
+    "       " +
+    "   </section>" +
+    "   <section class='zip-section'>" +
+    "       <label>Zip Code: </label>" +
+    "       <input id='zipCodeValue' placeholder='enter the zip' />" +
     "   </section>" +
     "</div>";
 
 const About = () => {
     return (aboutElements);
+}
+
+function enterZip(){
+    let zipCode = document.getElementById("zipCodeValue").textContent;
+    console.log("Zip Code: " + zipCode);
 }
