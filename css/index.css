@@ -1,0 +1,20 @@
+.heading {
+    height: 93vh;
+    display: flex;
+    flex-direction: column;
+    /*justify-content: center;*/
+    align-items: center;
+    text-align: center;
+}
+
+.heading h1{
+    margin-top: 30vh;
+    font-family: "Calibri";
+    font-weight: bold;
+    font-size: 28px;
+}
+
+.heading p {
+    font-family: "Calibri";
+    font-size: 18px;
+}

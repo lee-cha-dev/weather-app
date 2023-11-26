@@ -1,0 +1,14 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.body-dark-theme {
+    background-color: #457EAC;
+    color: #000000;
+}
+
+.body-light-theme {
+    background-color: #D9F0FF;
+    color: #000000;
+}
