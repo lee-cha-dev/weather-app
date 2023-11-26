@@ -96,7 +96,7 @@ function bodyOnLoad(){
 }
 
 function updateGUI(){
-    
+
 }
 
 // UPDATE THE NAVIGATION IN BOTH COLUMN AS NEW PAGES ARE ADD -- MIGHT MAKE THIS MORE EFFICIENT
