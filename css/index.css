@@ -7,28 +7,6 @@
     text-align: center;
 }
 
-.zip-section {
-    display: flex;
-    flex-direction: row;
-
-    position: absolute;
-    right: 50px;
-    top: 100px;
-}
-
-.zip-section label {
-    font-family: Calibri, sans-serif;
-    font-weight: bold;
-    font-size: 1.5em;
-    margin-right: 20px;
-}
-
-.zip-section textarea {
-    /*border-radius: 10px;*/
-    /*text-align: center;*/
-    /*align-content: center;*/
-}
-
 .heading h1{
     margin-top: 30vh;
     font-family: "Calibri";

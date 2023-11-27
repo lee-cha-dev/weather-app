@@ -56,6 +56,29 @@
     padding-left: 20px;
 }
 
+.zip-section {
+    display: flex;
+    flex-direction: row;
+    text-align: right;
+
+    position: absolute;
+    right: 90px;
+    /*top: 100px;*/
+}
+
+.zip-section label {
+    font-family: Calibri, sans-serif;
+    font-weight: bold;
+    font-size: 1.5em;
+    margin-right: 20px;
+}
+
+.zip-section textarea {
+    /*border-radius: 10px;*/
+    /*text-align: center;*/
+    /*align-content: center;*/
+}
+
 .theme-icon {
     padding: 8px;
     opacity: 0.7;
@@ -78,6 +101,6 @@
 }
 
 .dark-icon {
-    background-color: gray;
+    background-color: grey;
     color: whitesmoke;
 }

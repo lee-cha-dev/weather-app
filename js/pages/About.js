@@ -3,11 +3,7 @@ const aboutElements =
     "<div>" +
         Navbar() +
     "   <section class='weather-body'>" +
-    "       " +
-    "   </section>" +
-    "   <section class='zip-section'>" +
-    "       <label>Zip Code: </label>" +
-    "       <input id='zipCodeValue' placeholder='enter the zip' />" +
+    "       <img id='weather-icon' src='' alt='WeatherIcon' width='300' height='300' />" +
     "   </section>" +
     "</div>";
 

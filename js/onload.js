@@ -3,6 +3,7 @@
 const dev = true;
 
 let weatherData;
+let weatherIconPath;
 
 let city = "";
 let zipcode = "";
@@ -20,6 +21,7 @@ function bodyOnLoad(){
     let dir = window.location.href;
     let dirArr = dir.split('/');
     console.log(dirArr);
+
     // HANDLING PAGE TO LOAD
     if (dev === false){
         deployedNav(dirArr, content);
@@ -44,55 +46,71 @@ function bodyOnLoad(){
         let zip = document.getElementById("zipCodeValue").value;
 
         // GET THE WEATHER DATA FOR THE DATA PROVIDED AFTER CHECK FOR VALID ZIP
-        if (evt.key === "Enter"){
-            if (zip.length === 5){
-                console.log(zip);
-                let weatherUrlLatLon = `https://api.openweathermap.org/geo/1.0/zip?zip=${zip}&appid=${API_KEY}`
-                // GET THE LAT AND LON FROM THIS API
-
-                let lat = "";
-                let lon = "";
-
-                // TWO FETCH CALLS TO GET THE LONGITUDE AND LATITUDE && GET THE WEATHER BASED ON THE LON AND LAT
-                fetch(weatherUrlLatLon).then((res) => {
-                    res.json().then(out => {
-                        console.log(out);
-
-                        // IF THE FIRST ZIP ENTERED WAS INVALID -- NOTIFY USER -- ELSE RUN THE API
-                        // CALL TO GET THE WEATHER FOR THE ZIP
-                        if (out["cod"] === null || out["cod"] !== "404"){
-                            // GET THE LATITUDE AND LONGITUDE FROM THE JSON OBJ
-                            lat = out["lat"];
-                            lon = out["lon"];
-                            city = out["name"];
-                            zipcode = zip;
-
-                            // CALL FOR WEATHER UPDATE WITH LATITUDE AND LONGITUDE -- SET UNITS TO IMPERIAL
-                            let weatherUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=imperial`
-
-                            fetch(weatherUrl).then((res) => {
-                                res.json().then(out => {
-                                    console.log(out);
-                                    // UPDATE WEATHER DATA
-                                    weatherData = out;
-
-                                    console.log(`${city}, ${zipcode}`);
-                                }).catch(err => {
-                                    console.log(err);
-                                });
-                            });
-                        } else {
-                            console.log("BAD ZIP CODE ENTERED!!");
-                        }
-                    })
-                }).catch(err => {
-                    console.log(err);
-                });
-            } else {
-                console.log("Enter A Valid Zip Code.");
-            }
-        }
+        getWeatherFromAPI(evt, zip);
     });
+}
+
+function getWeatherFromAPI(evt, zip){
+    // GET THE WEATHER DATA FOR THE DATA PROVIDED AFTER CHECK FOR VALID ZIP
+    if (evt.key === "Enter"){
+        if (zip.length === 5){
+            console.log(zip);
+            let weatherUrlLatLon = `https://api.openweathermap.org/geo/1.0/zip?zip=${zip}&appid=${API_KEY}`
+            // GET THE LAT AND LON FROM THIS API
+
+            let lat = "";
+            let lon = "";
+
+            // TWO FETCH CALLS TO GET THE LONGITUDE AND LATITUDE && GET THE WEATHER BASED ON THE LON AND LAT
+            fetch(weatherUrlLatLon).then((res) => {
+                res.json().then(out => {
+                    console.log(out);
+
+                    // IF THE FIRST ZIP ENTERED WAS INVALID -- NOTIFY USER -- ELSE RUN THE API
+                    // CALL TO GET THE WEATHER FOR THE ZIP
+                    if (out["cod"] === null || out["cod"] !== "404"){
+                        // GET THE LATITUDE AND LONGITUDE FROM THE JSON OBJ
+                        lat = out["lat"];
+                        lon = out["lon"];
+                        city = out["name"];
+                        zipcode = zip;
+
+                        // CALL FOR WEATHER UPDATE WITH LATITUDE AND LONGITUDE -- SET UNITS TO IMPERIAL
+                        let weatherUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=imperial`
+                        fetch(weatherUrl).then((res) => {
+                            res.json().then(out => {
+                                console.log(out);
+                                // UPDATE WEATHER DATA
+                                weatherData = out;
+
+                                console.log(`${city}, ${zipcode}`);
+
+                                // UPDATE THE WEBPAGE ELEMENTS
+                                getWeatherIcon();
+                            }).catch(err => {
+                                console.log(err);
+                            });
+                        });
+                    } else {
+                        console.log("BAD ZIP CODE ENTERED!!");
+                    }
+                })
+            }).catch(err => {
+                console.log(err);
+            });
+        } else {
+            console.log("Enter A Valid Zip Code.");
+        }
+    }
+}
+
+function getWeatherIcon(){
+    // GET THE ICON FROM THE DATA
+    let weatherIcon = weatherData["weather"][0]["icon"];
+
+    weatherIconPath = `https://openweathermap.org/img/wn/${weatherIcon}@4x.png`
+
+    document.getElementById("weather-icon").src = weatherIconPath;
 }
 
 function updateGUI(){
