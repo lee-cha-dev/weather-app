@@ -23,7 +23,12 @@ class WeatherDataHandler {
             minTemp: "",
             maxTemp: "",
             condition: "",
-            pressure: ""
+            pressure: "",
+            wind: "",
+            visibility: "",
+            airQuality: "",
+            sunrise: "",
+            sunset: ""
         }
     }
 
@@ -125,6 +130,18 @@ class WeatherDataHandler {
         this.weatherDict.current.maxTemp = this.weatherData["main"]["temp_max"];
         this.weatherDict.current.condition = this.weatherData["weather"][0]["description"];
 
+        this.weatherDict.current.wind = this.weatherData["wind"]["speed"];
+        this.weatherDict.current.visibility = this.weatherData["visibility"];
+        this.weatherDict.current.sunrise = this.weatherData["sys"]["sunrise"];
+        this.weatherDict.current.sunset = this.weatherData["sys"]["sunset"];
+
+
+        /*
+            wind: "",
+            visibility: "",
+            sunrise: "",
+            sunset: ""
+        * */
         // UPDATE THE CURRENT DAY ELEMENTS
         this.appController.updateWeatherGUI();
     }

@@ -4,6 +4,7 @@ const aboutElements =
         Navbar() +
         MainSection() +
         CurrentDetailsSection() +
+        ForecastSection() +
     "</div>";
 
 const About = () => {
