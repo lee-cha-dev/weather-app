@@ -51,23 +51,21 @@ function getWeatherFromAPI(evt, zip){
 
             // CALL GET WEATHER TO UPDATE THE WEATHER DATA
             weatherDataHandler.getWeatherData(zip);
+
         } else {
             console.log("Enter A Valid Zip Code.");
         }
     }
 }
 
+function getWeatherData_Thread(zip){
+
+}
+
 function getWeatherIcon(){
     // GET THE ICON FROM THE DATA
     let weatherIcon = weatherDataHandler.weatherData["weather"][0]["icon"];
-
-    let weatherIconPath = `https://openweathermap.org/img/wn/${weatherIcon}@4x.png`
-
-    document.getElementById("weather-icon").src = weatherIconPath;
-}
-
-function updateGUI(){
-
+    document.getElementById("weather-icon").src = `https://openweathermap.org/img/wn/${weatherIcon}@4x.png`;
 }
 
 // UPDATE THE NAVIGATION IN BOTH COLUMN AS NEW PAGES ARE ADD -- MIGHT MAKE THIS MORE EFFICIENT
