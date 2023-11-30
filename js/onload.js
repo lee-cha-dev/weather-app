@@ -50,6 +50,8 @@ function getWeatherFromAPI(evt, zip){
             console.log(zip);
 
             // CALL GET WEATHER TO UPDATE THE WEATHER DATA
+            // THE CONTROLLER CLASS OBJ WITHIN WEATHER DATA WILL
+            // HANDLE UPDATING THE GUI ELEMENTS
             weatherDataHandler.getWeatherData(zip);
 
         } else {

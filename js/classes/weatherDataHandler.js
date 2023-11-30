@@ -2,7 +2,7 @@ class WeatherDataHandler {
 
     // CLASS THAT WILL HANDLE UPDATING THE WEATHER ELEMENTS
     // BASED ON THE DATA RETRIEVED
-    appView = new Controller();
+    appController = new Controller();
 
     // VARIABLES TO HOLD THE WEATHER DATA && URLS
     weatherUrl = "";
@@ -123,8 +123,9 @@ class WeatherDataHandler {
         this.weatherDict.current.humidity = this.weatherData["main"]["humidity"];
         this.weatherDict.current.minTemp = this.weatherData["main"]["temp_min"];
         this.weatherDict.current.maxTemp = this.weatherData["main"]["temp_max"];
+        this.weatherDict.current.condition = this.weatherData["weather"][0]["description"];
 
         // UPDATE THE CURRENT DAY ELEMENTS
-        this.appView.updateWeatherGUI();
+        this.appController.updateWeatherGUI();
     }
 }

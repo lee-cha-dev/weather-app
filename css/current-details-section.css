@@ -1,0 +1,23 @@
+.current-details-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 1vh 12vw 0;
+}
+
+.current-details-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2vw;
+}
+
+
+.line-break {
+    width: 75vw;
+    border-color: black;
+
+}
+
