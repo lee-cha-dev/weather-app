@@ -14,9 +14,28 @@
     box-shadow: 0 1px 10px rgb(0 0 0 / 0.4);
 }
 
+.forecast-tile-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 175px;
+    width: 85px;
+    padding: 10px 5px;
+    text-align: center;
+}
+
+.forecast-tile-wrapper p {
+    margin: 0;
+}
+
 .forecast-tile img {
     height: 75px;
     width: 75px;
+}
+
+.forecast-tile-condition {
+    padding-top: 10px;
 }
 
 .forecast-temp-range {

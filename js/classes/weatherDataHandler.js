@@ -13,6 +13,16 @@ class WeatherDataHandler {
     city = "";
     zipcode = "";
 
+    days = [
+        "Sunday",
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday"
+    ];
+
     // DICT TO HOLD CURRENT DAY WEATHER DATA AND FORECAST DATA
     weatherDict = {
         current: {
@@ -29,7 +39,10 @@ class WeatherDataHandler {
             airQuality: "",
             sunrise: "",
             sunset: ""
-        }
+        },
+        forecast: [
+
+        ]
     }
 
     // CONSTRUCTOR
@@ -123,17 +136,28 @@ class WeatherDataHandler {
         // UPDATE CURRENT DAY
         this.weatherDict.current.day = "TestDay";
         this.weatherDict.current.temp = this.weatherData["main"]["temp"];
-        this.weatherDict.current.feelsLike = this.weatherData["main"]["feelsLike"];
+        this.weatherDict.current.feelsLike = this.weatherData["main"]["feels_like"];
         this.weatherDict.current.pressure = this.weatherData["main"]["pressure"];
         this.weatherDict.current.humidity = this.weatherData["main"]["humidity"];
         this.weatherDict.current.minTemp = this.weatherData["main"]["temp_min"];
         this.weatherDict.current.maxTemp = this.weatherData["main"]["temp_max"];
         this.weatherDict.current.condition = this.weatherData["weather"][0]["description"];
-
         this.weatherDict.current.wind = this.weatherData["wind"]["speed"];
         this.weatherDict.current.visibility = this.weatherData["visibility"];
         this.weatherDict.current.sunrise = this.weatherData["sys"]["sunrise"];
         this.weatherDict.current.sunset = this.weatherData["sys"]["sunset"];
+
+        // UPDATE FORECAST
+
+        for (let i = 0; i < 8; i++){
+            let newDict = {
+                high: this.weatherForecastData["daily"][i]["temp"]["max"],
+                low: this.weatherForecastData["daily"][i]["temp"]["min"],
+                condition: this.weatherForecastData["daily"][i]["weather"][0]["description"],
+                icon: this.weatherForecastData["daily"][i]["weather"][0]["icon"]
+            };
+            this.weatherDict.forecast.push(newDict);
+        }
 
 
         /*
