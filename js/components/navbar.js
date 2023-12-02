@@ -31,7 +31,7 @@ const Navbar = () => {
         "   <a href=" + navPaths[1] + "><p>Portfolio</p></a>" +
         "   <section class='zip-section'>" +
         "       <label>Zip Code: </label>" +
-        "       <input id='zipCodeValue' placeholder='enter the zip' />" +
+        "       <input class='zip-code-value' id='zipCodeValue' placeholder='Enter the Zip' />" +
         "   </section>" +
         "   <span id='light-icon' onclick='setLightTheme()' class='material-symbols-outlined theme-icon light-icon'>light_mode</span>" +
         "   <span id='dark-icon' onclick='setDarkTheme()' class='material-symbols-outlined theme-icon dark-icon'>dark_mode</span>" +

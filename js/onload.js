@@ -28,6 +28,17 @@ function bodyOnLoad(){
     // EVENT LISTENERS
     //------------------------------------------------------------------------------------------------------------//
 
+    document.getElementById("zipCodeValue").addEventListener("click", (evt) => {
+        document.getElementById("navbar").style.opacity = "1.0";
+    });
+
+    document.getElementById("zipCodeValue").addEventListener("focusout", (evt) => {
+        if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+            document.getElementById("navbar").style.opacity = "0.5";
+        } else {
+            document.getElementById("navbar").style.opacity = "1";
+        }
+    });
 
     // EVENT LISTENER FOR ZIP CODE ENTRY
     document.getElementById("zipCodeValue").addEventListener("keydown", (evt) => {
@@ -41,6 +52,16 @@ function bodyOnLoad(){
         // GET THE WEATHER DATA FOR THE DATA PROVIDED AFTER CHECK FOR VALID ZIP
         getWeatherFromAPI(evt, zip);
     });
+
+    // HANDLE OPACITY CHANGE ON SCROLL FOR NAVBAR
+    window.onscroll = () => {
+        document.getElementById("zipCodeValue").blur();
+        if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+            document.getElementById("navbar").style.opacity = "0.5";
+        } else {
+            document.getElementById("navbar").style.opacity = "1";
+        }
+    }
 }
 
 function getWeatherFromAPI(evt, zip){

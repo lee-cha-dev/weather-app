@@ -5,9 +5,11 @@
     justify-content: center;
     align-items: center;
     text-align: center;
+
+    font-family: 'Roboto', sans-serif;
 }
 
-.current-day {
+.current-place {
     margin-top: 10vh;
     margin-bottom: 0;
     padding-bottom: 0;

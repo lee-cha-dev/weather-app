@@ -8,10 +8,24 @@
     box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px;
 
     position: fixed;
+
+    font-family: 'Roboto', sans-serif;
+
+    transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
+}
+
+.navbar:hover {
+    opacity: 1.0 !important;
+}
+
+.navbar:has(.zip-code-value:active) {
+    opacity: 1.0 !important;
 }
 
 .navbar-light-theme {
-    background-color: whitesmoke;
+    background-color: #F2F1E6;
     color: black;
 }
 
@@ -67,8 +81,6 @@
 }
 
 .zip-section label {
-    font-family: Calibri, sans-serif;
-    font-weight: bold;
     font-size: 1.5em;
     margin-right: 20px;
 }
@@ -77,6 +89,10 @@
     /*border-radius: 10px;*/
     /*text-align: center;*/
     /*align-content: center;*/
+}
+
+.zip-code-value {
+
 }
 
 .theme-icon {
