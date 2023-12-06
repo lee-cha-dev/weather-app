@@ -14,25 +14,23 @@ const Navbar = () => {
     //     HTML BELOW.
     if (dev === true){
         navPaths = [
-            'index.html',
-            'portfolio.html'
+            'index.html'
         ];
     } else {
         navPaths = [
-            './',
-            'portfolio'
+            './'
         ];
     }
 
     // PASS NAVIGATION PATHS INTO HTML ELEMENT(S).
     const nav =
         "<nav id='navbar' class='navbar'>" +
-        "   <a id='logo-link' href=" + navPaths[0] + "><h3 id='logo-text'>&lt; HI /&gt;</h3></a>" +
-        "   <a href=" + navPaths[1] + "><p>Portfolio</p></a>" +
-        "   <section class='zip-section'>" +
+        "   <a id='logo-link' href=" + navPaths[0] + "><h3 id='logo-text'>&lt; WeatherApp /&gt;</h3></a>" +
+        "   <section id='zip-section' class='zip-section'>" +
         "       <label>Zip Code: </label>" +
         "       <input class='zip-code-value' id='zipCodeValue' placeholder='Enter the Zip' />" +
         "   </section>" +
+        "   <span  id='zip-mobile-button' onclick='zipMobileButton()' class='material-symbols-outlined zip-mobile-button light-icon'>menu\n</span>" +
         "   <span id='light-icon' onclick='setLightTheme()' class='material-symbols-outlined theme-icon light-icon'>light_mode</span>" +
         "   <span id='dark-icon' onclick='setDarkTheme()' class='material-symbols-outlined theme-icon dark-icon'>dark_mode</span>" +
         "</nav>";

@@ -22,18 +22,12 @@ class Controller {
 
         // UPDATE CURRENT DAY
         this.updateCurrentDayGUI();
-
-        // UPDATE FORECAST
-
     }
 
     updateCurrentDayGUI(){
-        // BACKGROUND
-        document.getElementsByClassName("body-light-theme")[0].style = weatherDataHandler.possibleConditions[weatherDataHandler.weatherDict.current.condition];
-
         // MAIN SECTION
         document.getElementById("current-temp").innerHTML =
-            `${weatherDataHandler.weatherData["main"]["temp"]} °F`;
+            `${Math.round(weatherDataHandler.weatherData["main"]["temp"])} °F`;
         document.getElementById("current-condition").innerHTML =
             this.getFirstLettersCapitalized(weatherDataHandler.weatherDict.current.condition);
         document.getElementById("current-place").innerHTML =
@@ -47,7 +41,7 @@ class Controller {
         document.getElementById("detail-tile-value-Visibility").innerHTML =
             weatherDataHandler.weatherDict.current.visibility;
         document.getElementById("detail-tile-value-Feels-Like").innerHTML =
-            weatherDataHandler.weatherDict.current.feelsLike;
+            `${Math.round(weatherDataHandler.weatherDict.current.feelsLike)} °F`;
         document.getElementById("detail-tile-value-Sunrise").innerHTML =
             weatherDataHandler.weatherDict.current.sunrise;
         document.getElementById("detail-tile-value-Sunset").innerHTML =
@@ -63,9 +57,9 @@ class Controller {
             // UPDATE EACH TILE
             document.getElementById(tempId).innerHTML = weatherDataHandler.days[this.day + offset];
             document.getElementById(`forecast-tile-high-${this.forecastArr[count]}`).innerHTML =
-                weatherDataHandler.weatherDict.forecast[count].high;
+                `${Math.round(weatherDataHandler.weatherDict.forecast[count].high)} °F`;
             document.getElementById(`forecast-tile-low-${this.forecastArr[count]}`).innerHTML =
-                weatherDataHandler.weatherDict.forecast[count].low;
+                `${Math.round(weatherDataHandler.weatherDict.forecast[count].low)} °F`;
             document.getElementById(`forecast-tile-condition-${this.forecastArr[count]}`).innerHTML =
                 this.getFirstLettersCapitalized(weatherDataHandler.weatherDict.forecast[count].condition);
             document.getElementById(`forecast-tile-icon-${this.forecastArr[count]}`).src =
@@ -77,6 +71,17 @@ class Controller {
                 offset = this.day * -1;
             }
             count++;
+        }
+
+        // BACKGROUND
+        console.log(`style == '${weatherDataHandler.possibleConditions[weatherDataHandler.weatherDict.current.condition]}'`);
+        console.log(`condition == '${weatherDataHandler.weatherDict.current.condition}'`);
+        if (weatherDataHandler.themeMode === "light"){
+            console.log("updating theme -- light");
+            document.getElementsByClassName("body-light-theme")[0].style = weatherDataHandler.possibleConditions[weatherDataHandler.weatherDict.current.condition];
+        } else {
+            console.log("updating theme -- dark");
+            document.getElementsByClassName("body-dark-theme")[0].style = weatherDataHandler.possibleConditions[weatherDataHandler.weatherDict.current.condition];
         }
     }
 

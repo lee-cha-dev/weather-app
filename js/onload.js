@@ -5,7 +5,6 @@ let weatherDataHandler = new WeatherDataHandler();
 
 // ONLOAD FOR ALL BODY TAGS IN EVERY PAGE
 function bodyOnLoad(){
-
     console.log("Body Loaded\n");
 
     // GET BODY ELEMENT
@@ -61,6 +60,43 @@ function bodyOnLoad(){
         } else {
             document.getElementById("navbar").style.opacity = "1";
         }
+    }
+
+    window.addEventListener("resize", mobileZipInputHandler)
+
+    // HANDLE THE ZIP BUTTON'S MOBILE SETUP
+    mobileZipInputHandler();
+
+    // LOAD IN A DEFAULT ZIP TO POPULATE THE PAGE WITH REAL TIME DATA
+    weatherDataHandler.getWeatherData(85001);
+}
+
+function mobileZipInputHandler(){
+    const currentHeight = window.innerHeight;
+    const currentWidth = window.innerWidth;
+
+    if (currentWidth <= 750 && currentWidth > 575){
+        // SWITCH TO MOBILE BUTTON FOR ZIP INPUT
+        document.getElementById("zip-section").style.display = "none";
+        document.getElementById("zip-mobile-button").style.display = "flex";
+
+        // MAIN SECTION LAYOUT -- BACK TO DESKTOP
+        document.getElementById("main-wrapper").style.flexDirection = "row";
+        document.getElementById("main-wrapper").style.marginLeft = "-6vh";
+        document.getElementById("main-details").style.marginTop = "0";
+    } else if (currentWidth <= 575){
+        // SWITCH THE MAIN SECTION'S LAYOUT -- BACK TO MOBILE
+        document.getElementById("main-wrapper").style.flexDirection = "column";
+        document.getElementById("main-wrapper").style.marginLeft = "0";
+        document.getElementById("main-details").style.marginTop = "-30px";
+    } else {
+        document.getElementById("zip-section").style.display = "flex";
+        document.getElementById("zip-mobile-button").style.display = "none";
+
+        // MAIN SECTION LAYOUT -- BACK TO DESKTOP
+        document.getElementById("main-wrapper").style.flexDirection = "row";
+        document.getElementById("main-wrapper").style.marginLeft = "-6vh";
+        document.getElementById("main-details").style.marginTop = "0";
     }
 }
 
@@ -121,6 +157,7 @@ function deployedNav(dirArr, content){
 // TOGGLE THEME FUNCTIONS -- FOR SETTING THE THEM IN HANDLE THEME
 // AND ON CLICK FUNCTIONS FOR THE THEME TOGGLE IN THE NAVBAR --GLOBALLY ACCESSED
 function setDarkTheme(){
+    weatherDataHandler.themeMode = "dark";
     // SET BODY THEME
     const body = document.getElementById("body");
     body.classList.remove("body-light-theme");
@@ -138,6 +175,10 @@ function setDarkTheme(){
     // SET DARK ICON TOGGLE DISPLAY TO NONE;
     document.getElementById('dark-icon').style.display = 'none';
 
+    // TOGGLE THE MOBILE ICON CLASS
+    document.getElementById("zip-mobile-button").classList.remove("light-icon");
+    document.getElementById("zip-mobile-button").classList.add("dark-icon");
+
     console.log("dark-theme");
 
     // UPDATE COOKIES
@@ -145,6 +186,7 @@ function setDarkTheme(){
 }
 
 function setLightTheme(){
+    weatherDataHandler.themeMode = "light";
     // SET BODY THEME
     const body = document.getElementById("body");
     body.classList.remove("body-dark-theme");
@@ -162,6 +204,14 @@ function setLightTheme(){
     // SET DARK ICON TOGGLE DISPLAY TO FLEX;
     document.getElementById('dark-icon').style.display = 'flex';
 
+    // TOGGLE THE MOBILE ICON CLASS
+    document.getElementById("zip-mobile-button").classList.remove("dark-icon");
+    document.getElementById("zip-mobile-button").classList.add("light-icon");
+
     // UPDATE COOKIES
     setThemeCookies("theme", "light", 90);
+}
+
+function zipMobileButton(){
+    console.log("Mobile Button Clicked");
 }
