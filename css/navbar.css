@@ -138,3 +138,21 @@
     opacity: 0.5;
     box-shadow: none;
 }
+
+.exit-zip-mobile {
+    padding: 8px;
+    opacity: 0.7;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px;
+    background-color: whitesmoke;
+    color: black;
+
+    position: absolute;
+    right: 80px;
+}
+
+.exit-zip-mobile:hover {
+    cursor: pointer;
+    opacity: 0.5;
+    box-shadow: none;
+}

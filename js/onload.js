@@ -37,6 +37,8 @@ function bodyOnLoad(){
         } else {
             document.getElementById("navbar").style.opacity = "1";
         }
+        // CLOSE THE MOBILE ZIP TEXT ENTRY
+        closeZipMobile();
     });
 
     // EVENT LISTENER FOR ZIP CODE ENTRY
@@ -44,12 +46,16 @@ function bodyOnLoad(){
         // PREVENT THE USER FROM ENTERING IN NON NUMERICAL CHARACTERS
         if (isNaN(evt.key) && evt.key !== "Backspace" && evt.key !== "Tab"){
             evt.preventDefault();
+            // ONLY ALLOW 5 DIGITS TO BE ENTERED
+            if (document.getElementById("zipCodeValue").value.length === 5){
+                let zip = document.getElementById("zipCodeValue").value;
+
+                // GET THE WEATHER DATA FOR THE DATA PROVIDED AFTER CHECK FOR VALID ZIP
+                getWeatherFromAPI(evt, zip);
+            } else {
+                console.log("Five digits must be entered. No more. No less.");
+            }
         }
-
-        let zip = document.getElementById("zipCodeValue").value;
-
-        // GET THE WEATHER DATA FOR THE DATA PROVIDED AFTER CHECK FOR VALID ZIP
-        getWeatherFromAPI(evt, zip);
     });
 
     // HANDLE OPACITY CHANGE ON SCROLL FOR NAVBAR
@@ -60,6 +66,9 @@ function bodyOnLoad(){
         } else {
             document.getElementById("navbar").style.opacity = "1";
         }
+
+        // CLOSE THE MOBILE ZIP TEXT ENTRY
+        closeZipMobile();
     }
 
     window.addEventListener("resize", mobileZipInputHandler)
@@ -89,6 +98,9 @@ function mobileZipInputHandler(){
         document.getElementById("main-wrapper").style.flexDirection = "column";
         document.getElementById("main-wrapper").style.marginLeft = "0";
         document.getElementById("main-details").style.marginTop = "-30px";
+
+        document.getElementById("zip-section").style.display = "none";
+        document.getElementById("zip-mobile-button").style.display = "flex";
     } else {
         document.getElementById("zip-section").style.display = "flex";
         document.getElementById("zip-mobile-button").style.display = "none";
@@ -210,8 +222,4 @@ function setLightTheme(){
 
     // UPDATE COOKIES
     setThemeCookies("theme", "light", 90);
-}
-
-function zipMobileButton(){
-    console.log("Mobile Button Clicked");
 }

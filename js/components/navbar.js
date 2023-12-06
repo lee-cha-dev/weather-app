@@ -30,11 +30,30 @@ const Navbar = () => {
         "       <label>Zip Code: </label>" +
         "       <input class='zip-code-value' id='zipCodeValue' placeholder='Enter the Zip' />" +
         "   </section>" +
-        "   <span  id='zip-mobile-button' onclick='zipMobileButton()' class='material-symbols-outlined zip-mobile-button light-icon'>menu\n</span>" +
+        "   <span id='exit-zip-mobile' onclick='closeZipMobile()' style='display: none;' class='material-symbols-outlined exit-zip-mobile'>close</span>" +
+        "   <span  id='zip-mobile-button' onclick='zipMobileButton()' class='material-symbols-outlined zip-mobile-button light-icon'>menu</span>" +
         "   <span id='light-icon' onclick='setLightTheme()' class='material-symbols-outlined theme-icon light-icon'>light_mode</span>" +
         "   <span id='dark-icon' onclick='setDarkTheme()' class='material-symbols-outlined theme-icon dark-icon'>dark_mode</span>" +
         "</nav>";
 
     // RETURN THE NAVBAR
     return (nav);
+}
+
+function zipMobileButton(){
+    console.log("Mobile Button Clicked");
+
+    document.getElementById("zip-mobile-button").style.display = "none";
+    document.getElementById("exit-zip-mobile").style.display = "flex";
+    document.getElementById("zip-section").style.display = "flex";
+    document.getElementById("zip-section").style.right = "140px";
+    document.getElementById("logo-link").style.display = "none";
+}
+
+function closeZipMobile(){
+    document.getElementById("zip-mobile-button").style.display = "flex";
+    document.getElementById("exit-zip-mobile").style.display = "none";
+    document.getElementById("zip-section").style.display = "none";
+    document.getElementById("zip-section").style.right = "80px";
+    document.getElementById("logo-link").style.display = "flex";
 }
