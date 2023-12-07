@@ -55,6 +55,7 @@ function zipMobileButton(){
 
     document.getElementById("logo-link").classList.remove("zip-section-active");
 
+    document.getElementById("zipCodeValue").focus();
 }
 
 function closeZipMobile(){
@@ -71,4 +72,6 @@ function closeZipMobile(){
 
     document.getElementById("logo-link").classList.remove("navbar-elem-mobile-inactive");
     document.getElementById("logo-link").classList.add("navbar-elem-mobile-active");
+
+    document.getElementById("zipCodeValue").blur();
 }
