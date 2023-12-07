@@ -4,6 +4,8 @@ const dev = true;
 let weatherDataHandler = new WeatherDataHandler();
 
 // ONLOAD FOR ALL BODY TAGS IN EVERY PAGE
+
+// NEED TO ADD EVENT LISTENERS TO HANDLE MINIMIZE/MAXIMIZE TO ADJUST FROM MOBILE->DESKTOP->BACK
 function indexOnload(){
     console.log("Body Loaded\n");
 
@@ -32,6 +34,7 @@ function indexOnload(){
     });
 
     document.getElementById("zipCodeValue").addEventListener("focusout", (evt) => {
+        let zipText = document.getElementById("zipCodeValue");
         if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
             document.getElementById("navbar").style.opacity = "0.5";
         } else {
@@ -52,6 +55,9 @@ function indexOnload(){
 
                 // GET THE WEATHER DATA FOR THE DATA PROVIDED AFTER CHECK FOR VALID ZIP
                 getWeatherFromAPI(evt, zip);
+
+                // CLOSE THE MOBILE ELEM ON SUBMIT
+                closeZipMobile();
             } else {
                 console.log("Five digits must be entered. No more. No less.");
             }
@@ -211,6 +217,9 @@ function setDarkTheme(){
     navbar.classList.remove('navbar-light-theme');
     navbar.classList.add('navbar-dark-theme');
 
+    // UPDATE LOGO UNDERLINE COLOR
+    document.querySelector(".navbar").style.setProperty("--logo-underline-color", "white");
+
     // SWAP ICONS
     // SET LIGHT ICON TOGGLE DISPLAY TO FLEX
     document.getElementById('light-icon').style.display = 'flex';
@@ -239,6 +248,9 @@ function setLightTheme(){
     const navbar = document.getElementById('navbar');
     navbar.classList.remove('navbar-dark-theme');
     navbar.classList.add('navbar-light-theme');
+
+    // UPDATE LOGO UNDERLINE COLOR
+    document.querySelector(".navbar").style.setProperty("--logo-underline-color", "black");
 
     // SWAP ICONS
     // SET LIGHT ICON TOGGLE DISPLAY TO NONE

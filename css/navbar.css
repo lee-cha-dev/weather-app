@@ -1,6 +1,8 @@
 .navbar {
     --transition-time: 0.4s;
+    --transition-time-button: 0.25s;
     --anim-time: 0.4s;
+    --logo-underline-color: white;
 
     display: flex;
     gap: 20px;
@@ -12,9 +14,9 @@
     position: fixed;
     font-family: 'Roboto', sans-serif;
     animation: navbar-anim var(--anim-time) ease-in-out 0.1s;
-    transition: all var(--transition-time) ease-in-out;
-    -moz-transition: all var(--transition-time) ease-in-out;
-    -webkit-transition: all var(--transition-time) ease-in-out;
+    transition: opacity var(--transition-time) ease-in-out;
+    -moz-transition: opacity var(--transition-time) ease-in-out;
+    -webkit-transition: opacity var(--transition-time) ease-in-out;
 }
 
 .navbar:hover {
@@ -34,13 +36,13 @@
     color: black;
 }
 
-.navbar-light-theme h3 {
+.navbar-light-theme a {
     color: black;
 }
 
 .navbar-light-theme a:hover {
-    text-decoration: underline 1px;
-    color: black;
+    /*text-decoration: underline 1px;*/
+    /*color: black;*/
 }
 
 .navbar-dark-theme {
@@ -52,26 +54,52 @@
     color: white;
 }
 
-.navbar-dark-theme h3 {
+.navbar-dark-theme a {
     color: white;
 }
 
 .navbar-dark-theme a:hover {
-    text-decoration: underline 1px;
-    color: white;
+    /*text-decoration: underline 1px;*/
+    /*color: white;*/
 }
 
 .navbar a {
     text-decoration: none;
-    transition: all var(--transition-time) ease-in-out;
-    -moz-transition: all var(--transition-time) ease-in-out;
-    -webkit-transition: all var(--transition-time) ease-in-out;
+    text-underline-color: white;
+    /*transition: all var(--transition-time) ease-in-out;*/
+    /*-moz-transition: all var(--transition-time) ease-in-out;*/
+    /*-webkit-transition: all var(--transition-time) ease-in-out;*/
 }
 
-.navbar h3 {
+/*LOGO UNDERLINE EFFECT/ANIM START*/
+.underline-hover-right {
+    display: flex;
+    padding-bottom: 0.25rem;
+    position: relative;
+}
+
+.underline-hover-right::before {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--logo-underline-color);
+    transition: width 0.25s ease-out;
+}
+
+.underline-hover-right:hover::before{
+    width: 100%;
+    left: 0;
+    right: auto;
+}
+/*LOGO UNDERLINE EFFECT/ANIM END*/
+
+.navbar a {
     font-size: 20px;
     text-decoration: none;
-    padding-left: 20px;
+    margin-left: 20px;
 }
 
 .theme-icon {
@@ -92,17 +120,17 @@
 .light-icon {
     background-color: whitesmoke;
     color: black;
-    transition: all var(--transition-time) ease-in-out;
-    -moz-transition: all var(--transition-time) ease-in-out;
-    -webkit-transition: all var(--transition-time) ease-in-out;
+    transition: all var(--transition-time-button) ease-in-out;
+    -moz-transition: all var(--transition-time-button) ease-in-out;
+    -webkit-transition: all var(--transition-time-button) ease-in-out;
 }
 
 .dark-icon {
     background-color: grey;
     color: whitesmoke;
-    transition: all var(--transition-time) ease-in-out;
-    -moz-transition: all var(--transition-time) ease-in-out;
-    -webkit-transition: all var(--transition-time) ease-in-out;
+    transition: all var(--transition-time-button) ease-in-out;
+    -moz-transition: all var(--transition-time-button) ease-in-out;
+    -webkit-transition: all var(--transition-time-button) ease-in-out;
 }
 
 .zip-mobile-button {
@@ -113,9 +141,9 @@
     box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px;
     position: absolute;
     right: 80px;
-    transition: all var(--transition-time) ease-in-out;
-    -moz-transition: all var(--transition-time) ease-in-out;
-    -webkit-transition: all var(--transition-time) ease-in-out;
+    transition: all var(--transition-time-button) ease-in-out;
+    -moz-transition: all var(--transition-time-button) ease-in-out;
+    -webkit-transition: all var(--transition-time-button) ease-in-out;
 }
 
 .zip-mobile-button:hover {

@@ -25,13 +25,13 @@ const Navbar = () => {
     // PASS NAVIGATION PATHS INTO HTML ELEMENT(S).
     const nav =
         "<nav id='navbar' class='navbar'>" +
-        "   <a id='logo-link' href=" + navPaths[0] + "><h3 id='logo-text'>&lt; WeatherApp /&gt;</h3></a>" +
+        "   <a id='logo-link' class='underline-hover-right' href=" + navPaths[0] + ">&lt; WeatherApp /&gt;</a>" +
         "   <section id='zip-section' class='zip-section zip-section-active'>" +
         "       <label class='zip-section-label'>Zip Code: </label>" +
         "       <input class='zip-code-value' id='zipCodeValue' placeholder='Enter the Zip' />" +
         "   </section>" +
-        "   <span id='exit-zip-mobile' onclick='closeZipMobile()' style='display: flex;' class='material-symbols-outlined exit-zip-mobile'>close</span>" +
-        "   <span  id='zip-mobile-button' onclick='zipMobileButton()' class='material-symbols-outlined zip-mobile-button light-icon'>menu</span>" +
+        "   <span id='exit-zip-mobile' onclick='closeZipMobile()' style='display: flex;' class='material-symbols-outlined exit-zip-mobile theme-icon'>close</span>" +
+        "   <span  id='zip-mobile-button' onclick='zipMobileButton()' class='material-symbols-outlined zip-mobile-button theme-icon'>menu</span>" +
         "   <span id='light-icon' onclick='setLightTheme()' class='material-symbols-outlined theme-icon light-icon'>light_mode</span>" +
         "   <span id='dark-icon' onclick='setDarkTheme()' class='material-symbols-outlined theme-icon dark-icon'>dark_mode</span>" +
         "</nav>";
@@ -54,7 +54,10 @@ function zipMobileButton(){
     document.getElementById("logo-link").classList.add("navbar-elem-mobile-inactive");
     document.getElementById("logo-link").classList.remove("zip-section-active");
 
+    // FOCUS IN AND MAKE THE ELEMENT ACTIVE
+    // NAVBAR'S OPACITY GOES TO HALF WHEN NOT HOVER IF ".click()" IS NOT USER
     document.getElementById("zipCodeValue").focus();
+    document.getElementById("zipCodeValue").click();
 }
 
 function closeZipMobile(){
