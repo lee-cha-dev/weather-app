@@ -86,8 +86,20 @@ function mobileZipInputHandler(){
 
     if (currentWidth <= 750 && currentWidth > 575){
         // SWITCH TO MOBILE BUTTON FOR ZIP INPUT
-        document.getElementById("zip-section").style.display = "none";
-        document.getElementById("zip-mobile-button").style.display = "flex";
+
+        // HIDE ZIP TEXT INPUT ELEM
+        document.getElementById("zip-section").classList.remove("navbar-elem-mobile-active");
+        document.getElementById("zip-section").classList.add("navbar-elem-mobile-inactive");
+        document.getElementById("zip-section").classList.remove("zip-section-active");
+        document.getElementById("zip-section").classList.add("zip-section-inactive");
+
+        // SHOW MOBILE MENU
+        document.getElementById("zip-mobile-button").classList.remove("navbar-elem-mobile-inactive");
+        document.getElementById("zip-mobile-button").classList.add("navbar-elem-mobile-active");
+
+        // HIDE ZIP EXIT BUTTON
+        document.getElementById("exit-zip-mobile").classList.remove("navbar-elem-mobile-active");
+        document.getElementById("exit-zip-mobile").classList.add("navbar-elem-mobile-inactive");
 
         // MAIN SECTION LAYOUT -- BACK TO DESKTOP
         document.getElementById("main-wrapper").style.flexDirection = "row";
@@ -99,11 +111,30 @@ function mobileZipInputHandler(){
         document.getElementById("main-wrapper").style.marginLeft = "0";
         document.getElementById("main-details").style.marginTop = "-30px";
 
-        document.getElementById("zip-section").style.display = "none";
-        document.getElementById("zip-mobile-button").style.display = "flex";
+        // display
+        document.getElementById("zip-section").classList.remove("navbar-elem-mobile-active");
+        document.getElementById("zip-section").classList.add("navbar-elem-mobile-inactive");
+        document.getElementById("zip-section").classList.remove("zip-section-active");
+        document.getElementById("zip-section").classList.add("zip-section-inactive");
+        // hide
+        document.getElementById("zip-mobile-button").classList.remove("navbar-elem-mobile-inactive");
+        document.getElementById("zip-mobile-button").classList.add("navbar-elem-mobile-active");
+
+        document.getElementById("exit-zip-mobile").classList.remove("navbar-elem-mobile-active");
+        document.getElementById("exit-zip-mobile").classList.add("navbar-elem-mobile-inactive");
     } else {
-        document.getElementById("zip-section").style.display = "flex";
-        document.getElementById("zip-mobile-button").style.display = "none";
+        // document.getElementById("zip-section").style.display = "flex";
+        document.getElementById("zip-section").classList.remove("navbar-elem-mobile-inactive");
+        document.getElementById("zip-section").classList.add("navbar-elem-mobile-active");
+        document.getElementById("zip-section").classList.remove("zip-section-active");
+        document.getElementById("zip-section").classList.add("zip-section-inactive");
+
+        document.getElementById("zip-mobile-button").classList.remove("navbar-elem-mobile-active");
+        document.getElementById("zip-mobile-button").classList.add("navbar-elem-mobile-inactive");
+
+        // document.getElementById("zip-mobile-button").style.display = "none";
+        document.getElementById("exit-zip-mobile").classList.remove("navbar-elem-mobile-active");
+        document.getElementById("exit-zip-mobile").classList.add("navbar-elem-mobile-inactive");
 
         // MAIN SECTION LAYOUT -- BACK TO DESKTOP
         document.getElementById("main-wrapper").style.flexDirection = "row";
