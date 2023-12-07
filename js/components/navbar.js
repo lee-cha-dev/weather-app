@@ -26,8 +26,8 @@ const Navbar = () => {
     const nav =
         "<nav id='navbar' class='navbar'>" +
         "   <a id='logo-link' href=" + navPaths[0] + "><h3 id='logo-text'>&lt; WeatherApp /&gt;</h3></a>" +
-        "   <section id='zip-section' class='zip-section'>" +
-        "       <label>Zip Code: </label>" +
+        "   <section id='zip-section' class='zip-section zip-section-active'>" +
+        "       <label class='zip-section-label'>Zip Code: </label>" +
         "       <input class='zip-code-value' id='zipCodeValue' placeholder='Enter the Zip' />" +
         "   </section>" +
         "   <span id='exit-zip-mobile' onclick='closeZipMobile()' style='display: flex;' class='material-symbols-outlined exit-zip-mobile'>close</span>" +
@@ -47,14 +47,14 @@ function zipMobileButton(){
     document.getElementById("exit-zip-mobile").classList.remove("navbar-elem-mobile-inactive");
     document.getElementById("exit-zip-mobile").classList.add("navbar-elem-mobile-active");
 
-    document.getElementById("zip-section").classList.remove("navbar-elem-mobile-inactive");
-    document.getElementById("zip-section").classList.add("navbar-elem-mobile-active");
-
     document.getElementById("zip-section").classList.remove("zip-section-inactive");
     document.getElementById("zip-section").classList.add("zip-section-active");
 
     document.getElementById("logo-link").classList.remove("navbar-elem-mobile-active");
     document.getElementById("logo-link").classList.add("navbar-elem-mobile-inactive");
+
+    document.getElementById("logo-link").classList.remove("zip-section-active");
+
 }
 
 function closeZipMobile(){
@@ -64,8 +64,8 @@ function closeZipMobile(){
     document.getElementById("exit-zip-mobile").classList.remove("navbar-elem-mobile-active");
     document.getElementById("exit-zip-mobile").classList.add("navbar-elem-mobile-inactive");
 
-    document.getElementById("zip-section").classList.remove("navbar-elem-mobile-active");
-    document.getElementById("zip-section").classList.add("navbar-elem-mobile-inactive");
+    // document.getElementById("zip-section").classList.remove("navbar-elem-mobile-active");
+    // document.getElementById("zip-section").classList.add("navbar-elem-mobile-inactive");
     document.getElementById("zip-section").classList.remove("zip-section-active");
     document.getElementById("zip-section").classList.add("zip-section-inactive");
 

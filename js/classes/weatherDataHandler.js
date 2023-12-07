@@ -56,6 +56,9 @@ class WeatherDataHandler {
         "mist": "background-image: url('https://images.unsplash.com/photo-1485236715568-ddc5ee6ca227?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');"
     };
 
+    // NEED TO EXPAND ON THE CONDITIONS -> THERE ARE NUMEROUS EXPANDED CONDITIONS UNDER RAIN, THUNDERSTORM, ETC.
+    // A FUNCTION WILL NEED TO BE CALLED IN ORDER TO MATCH THE CORRECTION PRIMARY CONDITION FOR ALL SUB-CONDITIONS
+
     conditionList = [
         "clear sky",
         "few clouds",

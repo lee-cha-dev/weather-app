@@ -85,14 +85,18 @@ function mobileZipInputHandler(){
     const currentWidth = window.innerWidth;
 
     if (currentWidth <= 750 && currentWidth > 575){
-        // SWITCH TO MOBILE BUTTON FOR ZIP INPUT
-        toggleMobileViewNav();
+        document.getElementById("logo-link").classList.add("zip-section-active");
 
         // MAIN SECTION LAYOUT -- BACK TO DESKTOP
         document.getElementById("main-wrapper").style.flexDirection = "row";
         document.getElementById("main-wrapper").style.marginLeft = "-6vh";
         document.getElementById("main-details").style.marginTop = "0";
+
+        // SWITCH TO MOBILE BUTTON FOR ZIP INPUT
+        toggleMobileViewNav();
     } else if (currentWidth <= 575){
+        document.getElementById("logo-link").classList.add("zip-section-active");
+
         // SWITCH THE MAIN SECTION'S LAYOUT -- BACK TO MOBILE
         document.getElementById("main-wrapper").style.flexDirection = "column";
         document.getElementById("main-wrapper").style.marginLeft = "0";
@@ -101,17 +105,22 @@ function mobileZipInputHandler(){
         // display
         toggleMobileViewNav();
     } else {
-        // document.getElementById("zip-section").style.display = "flex";
-        document.getElementById("zip-section").classList.remove("navbar-elem-mobile-inactive");
-        document.getElementById("zip-section").classList.add("navbar-elem-mobile-active");
-        document.getElementById("zip-section").classList.remove("zip-section-active");
-        document.getElementById("zip-section").classList.add("zip-section-inactive");
+        // TOGGLE FROM MOBILE TO DESKTOP VIEW
+        // document.getElementById("zip-section").classList.remove("navbar-elem-mobile-inactive");
+        // document.getElementById("zip-section").classList.add("navbar-elem-mobile-active");
+        document.getElementById("zip-section").classList.remove("zip-section-inactive");
+        document.getElementById("zip-section").classList.add("zip-section-active");
+        document.getElementById("zip-section").classList.remove("zip-section-mobile");
+        document.getElementById("zip-section").classList.add("zip-section-desktop");
 
         document.getElementById("zip-mobile-button").classList.remove("navbar-elem-mobile-active");
         document.getElementById("zip-mobile-button").classList.add("navbar-elem-mobile-inactive");
 
         document.getElementById("exit-zip-mobile").classList.remove("navbar-elem-mobile-active");
         document.getElementById("exit-zip-mobile").classList.add("navbar-elem-mobile-inactive");
+
+
+        document.getElementById("logo-link").classList.add("zip-section-active");
 
         // MAIN SECTION LAYOUT -- BACK TO DESKTOP
         document.getElementById("main-wrapper").style.flexDirection = "row";
@@ -122,10 +131,11 @@ function mobileZipInputHandler(){
 
 function toggleMobileViewNav(){
     // HIDE ZIP TEXT INPUT ELEM
-    document.getElementById("zip-section").classList.remove("navbar-elem-mobile-active");
-    document.getElementById("zip-section").classList.add("navbar-elem-mobile-inactive");
     document.getElementById("zip-section").classList.remove("zip-section-active");
     document.getElementById("zip-section").classList.add("zip-section-inactive");
+    document.getElementById("zip-section").classList.remove("zip-section-desktop");
+    document.getElementById("zip-section").classList.add("zip-section-mobile");
+
 
     // SHOW MOBILE MENU
     document.getElementById("zip-mobile-button").classList.remove("navbar-elem-mobile-inactive");
@@ -152,10 +162,6 @@ function getWeatherFromAPI(evt, zip){
             console.log("Enter A Valid Zip Code.");
         }
     }
-}
-
-function getWeatherData_Thread(zip){
-
 }
 
 function getWeatherIcon(){

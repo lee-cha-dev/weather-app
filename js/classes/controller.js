@@ -1,3 +1,7 @@
+// CONTROLLER CLASS IS TO PERFORM ALL GUI UPDATES REQUIRED BY THE DATA HANDLER CLASS
+// ANY GUI UPDATES CALLED FROM THE ONLOAD WILL REMAIN IN THE ONLOAD
+// ABSTRACTING OUT TWO CLASSES IS NOT COST EFFECTIVE
+
 class Controller {
     date = new Date();
     day = this.date.getDay();
@@ -20,11 +24,6 @@ class Controller {
     updateWeatherGUI(){
         console.log("UPDATING GUI");
 
-        // UPDATE CURRENT DAY
-        this.updateCurrentDayGUI();
-    }
-
-    updateCurrentDayGUI(){
         // MAIN SECTION
         document.getElementById("current-temp").innerHTML =
             `${Math.round(weatherDataHandler.weatherData["main"]["temp"])} °F`;
