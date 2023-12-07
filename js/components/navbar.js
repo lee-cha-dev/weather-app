@@ -41,8 +41,6 @@ const Navbar = () => {
 }
 
 function zipMobileButton(){
-    console.log("Mobile Button Clicked");
-
     document.getElementById("zip-mobile-button").classList.remove("navbar-elem-mobile-active");
     document.getElementById("zip-mobile-button").classList.add("navbar-elem-mobile-inactive");
 
@@ -54,8 +52,6 @@ function zipMobileButton(){
 
     document.getElementById("zip-section").classList.remove("zip-section-inactive");
     document.getElementById("zip-section").classList.add("zip-section-active");
-
-    // document.getElementById("zip-section").style.right = "140px";
 
     document.getElementById("logo-link").classList.remove("navbar-elem-mobile-active");
     document.getElementById("logo-link").classList.add("navbar-elem-mobile-inactive");
@@ -72,8 +68,6 @@ function closeZipMobile(){
     document.getElementById("zip-section").classList.add("navbar-elem-mobile-inactive");
     document.getElementById("zip-section").classList.remove("zip-section-active");
     document.getElementById("zip-section").classList.add("zip-section-inactive");
-
-    // document.getElementById("zip-section").style.right = "80px";
 
     document.getElementById("logo-link").classList.remove("navbar-elem-mobile-inactive");
     document.getElementById("logo-link").classList.add("navbar-elem-mobile-active");
