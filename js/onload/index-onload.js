@@ -4,7 +4,7 @@ const dev = true;
 let weatherDataHandler = new WeatherDataHandler();
 
 // ONLOAD FOR ALL BODY TAGS IN EVERY PAGE
-function bodyOnLoad(){
+function indexOnload(){
     console.log("Body Loaded\n");
 
     // GET BODY ELEMENT
