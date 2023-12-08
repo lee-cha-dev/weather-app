@@ -41,7 +41,7 @@ function indexOnload(){
             document.getElementById("navbar").style.opacity = "1";
         }
         // CLOSE THE MOBILE ZIP TEXT ENTRY
-        closeZipMobile();
+        if (window.innerWidth <= 750) closeZipMobile();
     });
 
     // EVENT LISTENER FOR ZIP CODE ENTRY
@@ -57,7 +57,7 @@ function indexOnload(){
                 getWeatherFromAPI(evt, zip);
 
                 // CLOSE THE MOBILE ELEM ON SUBMIT
-                closeZipMobile();
+                if (window.innerWidth <= 750) closeZipMobile();
             } else {
                 console.log("Five digits must be entered. No more. No less.");
             }
@@ -74,7 +74,7 @@ function indexOnload(){
         }
 
         // CLOSE THE MOBILE ZIP TEXT ENTRY
-        closeZipMobile();
+        if (window.innerWidth <= 750) closeZipMobile();
     }
 
     window.addEventListener("resize", mobileZipInputHandler)

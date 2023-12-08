@@ -5,10 +5,12 @@ body {
 
 .body-dark-theme {
     background-color: #457EAC;
+    background-attachment: fixed;
     color: #000000;
 }
 
 .body-light-theme {
     background-color: #87CEEB;
+    background-attachment: fixed;
     color: #000000;
 }
