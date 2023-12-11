@@ -84,6 +84,7 @@ function indexOnload(){
 
     // LOAD IN A DEFAULT ZIP TO POPULATE THE PAGE WITH REAL TIME DATA
     weatherDataHandler.getWeatherData(85001);
+
 }
 
 function mobileZipInputHandler(){
