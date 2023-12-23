@@ -160,6 +160,7 @@ class WeatherDataHandler {
                 console.log("---------------------------------");
                 console.log(data.forecastData);
 
+                // STORE THE DATA LOCALLY
                 this.weatherData = data.weatherData;
                 this.weatherForecastData = data.forecastData;
                 this.zipData = data.zipData;

@@ -30,10 +30,10 @@ const Navbar = () => {
         "       <label class='zip-section-label'>Zip Code: </label>" +
         "       <input class='zip-code-value' id='zipCodeValue' placeholder='Enter the Zip' />" +
         "   </section>" +
-        "   <span id='exit-zip-mobile' onclick='closeZipMobile()' style='display: flex;' class='material-symbols-outlined exit-zip-mobile theme-icon'>close</span>" +
-        "   <span  id='zip-mobile-button' onclick='zipMobileButton()' class='material-symbols-outlined zip-mobile-button theme-icon'>menu</span>" +
-        "   <span id='light-icon' onclick='setLightTheme()' class='material-symbols-outlined theme-icon light-icon'>light_mode</span>" +
-        "   <span id='dark-icon' onclick='setDarkTheme()' class='material-symbols-outlined theme-icon dark-icon'>dark_mode</span>" +
+        "   <span id='exit-zip-mobile' onclick='closeZipMobile()' style='display: flex;' class='theme-icon material-symbols-outlined exit-zip-mobile'>close</span>" +
+        "   <span  id='zip-mobile-button' onclick='zipMobileButton()' class='theme-icon material-symbols-outlined zip-mobile-button'>menu</span>" +
+        "   <span id='light-icon' onclick='setLightTheme()' class='theme-icon material-symbols-outlined light-icon'>light_mode</span>" +
+        "   <span id='dark-icon' onclick='setDarkTheme()' class='theme-icon material-symbols-outlined dark-icon'>dark_mode</span>" +
         "</nav>";
 
     // RETURN THE NAVBAR
