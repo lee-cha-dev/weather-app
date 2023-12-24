@@ -261,8 +261,57 @@
 
 /* MEDIA QUERIES START */
 
+/* IPHONE SE -- 375x667 (WIDTHxHEIGHT) */
+@media screen and (width: 375px) and (height: 667px){
+    .navbar a {
+        font-size: 14px;
+    }
+    .theme-icon {
+        font-size: 16px !important;
+    }
+    .zip-mobile-button {
+        right: 63px;
+    }
+    .exit-zip-mobile {
+        right: 63px;
+    }
+    .zip-section-mobile {
+        right: 110px;
+        align-content: center;
+        justify-content: center;
+    }
+    .zip-section-label {
+        font-size: 13px !important;
+        margin-top: 3px;
+    }
+}
+
+/* IPHONE XR -- 414x896 (WIDTHxHEIGHT) */
+@media screen and (width: 414px) and (height: 896px){
+    .navbar a {
+        font-size: 16px;
+    }
+    .theme-icon {
+        font-size: 18px !important;
+    }
+    .zip-mobile-button {
+        right: 65px;
+    }
+    .exit-zip-mobile {
+        right: 65px;
+    }
+    .zip-section-mobile {
+        right: 120px;
+        align-content: center;
+        justify-content: center;
+    }
+    .zip-section-label {
+        font-size: 16px !important;
+    }
+}
+
 /* IPHONE 12 -- 390x844 (WIDTHxHEIGHT) */
-@media screen and (max-width: 390px) and (max-height: 844px){
+@media screen and (width: 390px) and (height: 844px){
     .navbar a {
         font-size: 17px;
     }
@@ -283,5 +332,353 @@
     .zip-section-label {
         font-size: 14px !important;
     }
+}
 
+/* IPHONE 12 -- 390x844 (WIDTHxHEIGHT) -- GENERAL IPHONE 12 SUPPORT*/
+@media screen and (max-width: 390px) and (max-height: 844px){
+    .navbar a {
+        font-size: 17px;
+    }
+    .theme-icon {
+        font-size: 20px !important;
+    }
+    .zip-mobile-button {
+        right: 65px;
+    }
+    .exit-zip-mobile {
+        right: 65px;
+    }
+    .zip-section-mobile {
+        right: 120px;
+        align-content: center;
+        justify-content: center;
+    }
+    .zip-section-label {
+        font-size: 14px !important;
+    }
+}
+
+/* IPHONE 14 MAX -- 430x932 (WIDTHxHEIGHT) */
+@media screen and (width: 430px) and (height: 932px){
+    .navbar a {
+        font-size: 16px;
+    }
+    .theme-icon {
+        font-size: 20px !important;
+    }
+    .zip-mobile-button {
+        right: 65px;
+    }
+    .exit-zip-mobile {
+        right: 65px;
+    }
+    .zip-section-mobile {
+        right: 120px;
+        align-content: center;
+        justify-content: center;
+    }
+    .zip-section-label {
+        font-size: 16px !important;
+    }
+}
+
+/* PIXEL 7 -- 412x915 (WIDTHxHEIGHT) */
+@media screen and (width: 412px) and (height: 915px){
+    .navbar a {
+        font-size: 15px;
+    }
+    .theme-icon {
+        font-size: 18px !important;
+    }
+    .zip-mobile-button {
+        right: 65px;
+    }
+    .exit-zip-mobile {
+        right: 65px;
+    }
+    .zip-section-mobile {
+        right: 120px;
+        align-content: center;
+        justify-content: center;
+    }
+    .zip-section-label {
+        font-size: 15px !important;
+    }
+}
+
+/* GALAXY S8+ -- 360x740 (WIDTHxHEIGHT) */
+@media screen and (width: 360px) and (height: 740px){
+    .navbar a {
+        font-size: 16px;
+    }
+    .theme-icon {
+        font-size: 17px !important;
+    }
+    .zip-mobile-button {
+        right: 65px;
+    }
+    .exit-zip-mobile {
+        right: 65px;
+    }
+    .zip-section-mobile {
+        right: 113px;
+        align-content: center;
+        justify-content: center;
+    }
+    .zip-section-label {
+        font-size: 11px !important;
+        margin-right: 10px;
+        margin-top: 3px;
+        text-align: center;
+    }
+}
+
+/* GALAXY S20 ULTRA -- 412x915 (WIDTHxHEIGHT) */
+@media screen and (width: 412px) and (height: 915px){
+    .navbar a {
+        font-size: 17px;
+    }
+    .theme-icon {
+        font-size: 20px !important;
+    }
+    .zip-mobile-button {
+        right: 65px;
+    }
+    .exit-zip-mobile {
+        right: 65px;
+    }
+    .zip-section-mobile {
+        right: 120px;
+        align-content: center;
+        justify-content: center;
+    }
+    .zip-section-label {
+        font-size: 14px !important;
+    }
+}
+
+/* IPAD MINI -- 768x1024 (WIDTHxHEIGHT) */
+@media screen and (width: 768px) and (height: 1024px){
+    .navbar a {
+        font-size: 20px;
+    }
+    .theme-icon {
+        font-size: 24px !important;
+    }
+    .zip-mobile-button {
+        right: 65px;
+    }
+    .exit-zip-mobile {
+        right: 65px;
+    }
+    .zip-section-mobile {
+        right: 120px;
+        align-content: center;
+        justify-content: center;
+    }
+    .zip-section-label {
+        font-size: 20px !important;
+    }
+}
+
+/* IPAD AIR -- 820x1180 (WIDTHxHEIGHT) */
+@media screen and (width: 820px) and (height: 1180px){
+    .navbar a {
+        font-size: 22px;
+    }
+    .theme-icon {
+        font-size: 26px !important;
+    }
+    .zip-mobile-button {
+        right: 65px;
+    }
+    .exit-zip-mobile {
+        right: 65px;
+    }
+    .zip-section-mobile {
+        right: 120px;
+        align-content: center;
+        justify-content: center;
+    }
+    .zip-section-label {
+        font-size: 22px !important;
+    }
+}
+
+/* IPAD PRO -- 1024x1366 (WIDTHxHEIGHT) */
+@media screen and (width: 1024px) and (height: 1366px){
+    .navbar a {
+        font-size: 26px;
+    }
+    .theme-icon {
+        font-size: 28px !important;
+    }
+    .zip-mobile-button {
+        right: 65px;
+    }
+    .exit-zip-mobile {
+        right: 65px;
+    }
+    .zip-section-mobile {
+        right: 120px;
+        align-content: center;
+        justify-content: center;
+    }
+    .zip-section-label {
+        font-size: 26px !important;
+    }
+}
+
+/* SURFACE PRO 7 -- 912x1368 (WIDTHxHEIGHT) */
+@media screen and (width: 912px) and (height: 1368px){
+    .navbar a {
+        font-size: 24px;
+    }
+    .theme-icon {
+        font-size: 26px !important;
+    }
+    .zip-mobile-button {
+        right: 65px;
+    }
+    .exit-zip-mobile {
+        right: 65px;
+    }
+    .zip-section-mobile {
+        right: 120px;
+        align-content: center;
+        justify-content: center;
+    }
+    .zip-section-label {
+        font-size: 24px !important;
+    }
+}
+
+/* SURFACE DUO -- 540x720 (WIDTHxHEIGHT) */
+@media screen and (width: 540px) and (height: 720px){
+    .navbar a {
+        font-size: 18px;
+    }
+    .theme-icon {
+        font-size: 18px !important;
+    }
+    .zip-mobile-button {
+        right: 65px;
+    }
+    .exit-zip-mobile {
+        right: 65px;
+    }
+    .zip-section-mobile {
+        right: 120px;
+        align-content: center;
+        justify-content: center;
+    }
+    .zip-section-label {
+        font-size: 18px !important;
+    }
+}
+
+/* GALAXY FOLD -- 912x1368 (WIDTHxHEIGHT) */
+@media screen and (width: 280px) and (height: 653px){
+    .navbar a {
+        font-size: 12px;
+    }
+    .theme-icon {
+        font-size: 12px !important;
+        right: 10px;
+    }
+    .zip-mobile-button {
+        right: 45px;
+    }
+    .exit-zip-mobile {
+        right: 45px;
+    }
+    .zip-section-mobile {
+        right: 85px;
+        align-content: center;
+        justify-content: center;
+    }
+    .zip-section-label {
+        font-size: 11px !important;
+    }
+    .zip-code-value {
+        font-size: 10px;
+    }
+}
+
+/* GALAXY A51/71 -- 412x914 (WIDTHxHEIGHT) */
+@media screen and (width: 412px) and (height: 914px){
+    .navbar a {
+        font-size: 18px;
+    }
+    .theme-icon {
+        font-size: 20px !important;
+    }
+    .zip-mobile-button {
+        right: 65px;
+    }
+    .exit-zip-mobile {
+        right: 65px;
+    }
+    .zip-section-mobile {
+        right: 120px;
+        align-content: center;
+        justify-content: center;
+    }
+    .zip-section-label {
+        font-size: 18px !important;
+    }
+}
+
+/* NEST HUB -- 1024x600 (WIDTHxHEIGHT) */
+@media screen and (width: 1024px) and (height: 600px){
+    .navbar {
+        height: 10vh;
+    }
+    .navbar a {
+        font-size: 24px;
+    }
+    .theme-icon {
+        font-size: 26px !important;
+    }
+    .zip-mobile-button {
+        right: 65px;
+    }
+    .exit-zip-mobile {
+        right: 65px;
+    }
+    .zip-section-mobile {
+        right: 120px;
+        align-content: center;
+        justify-content: center;
+    }
+    .zip-section-label {
+        font-size: 24px !important;
+    }
+}
+
+/* NEST HUB MAX -- 1280x800 (WIDTHxHEIGHT) */
+@media screen and (width: 1280px) and (height: 800px){
+    .navbar {
+        height: 10vh;
+    }
+    .navbar a {
+        font-size: 26px;
+    }
+    .theme-icon {
+        font-size: 28px !important;
+    }
+    .zip-mobile-button {
+        right: 65px;
+    }
+    .exit-zip-mobile {
+        right: 65px;
+    }
+    .zip-section-mobile {
+        right: 130px;
+        align-content: center;
+        justify-content: center;
+    }
+    .zip-section-label {
+        font-size: 26px !important;
+    }
 }

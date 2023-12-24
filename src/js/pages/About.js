@@ -1,6 +1,6 @@
 
 const aboutElements =
-    "<div>" +
+    "<div class='main-body'>" +
         Navbar() +
         MainSection() +
         CurrentDetailsSection() +

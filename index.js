@@ -86,12 +86,3 @@ app.post('/weather-data', (req, res) => {
 app.listen(port, () => {
     console.log(`Server is listening on port ${port}`);
 });
-
-async function fetchTest(url){
-    await fetch(url).then((response) => {
-        response.json().then(out => {
-            console.log(out);
-            return out;
-        })
-    });
-}
