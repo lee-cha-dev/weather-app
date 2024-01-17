@@ -6,7 +6,7 @@
 
     display: flex;
     gap: 20px;
-    width: 100%;
+    width: 100vw;
     height: 7vh;
     align-items: center;
     background-color: black;

@@ -73,14 +73,25 @@ class Controller {
         }
 
         // BACKGROUND
-        console.log(`style == '${weatherDataHandler.possibleConditions[weatherDataHandler.weatherDict.current.condition]}'`);
-        console.log(`condition == '${weatherDataHandler.weatherDict.current.condition}'`);
+        // GET CONDITION AND CHECK IT FOR THE MAIN CONDITION (SHOULD BE A SUBSTRING)
+        let condition = weatherDataHandler.weatherDict.current.condition
+        let foundCondition = false;
+        weatherDataHandler.conditionList.forEach(cond => {
+            if (condition.includes(cond)){
+                foundCondition = true;
+                condition = cond;
+            }
+        });
+        // CONSOLE LOG THE EDGE CASE -> IDEALLY THIS WOULD BE LOGGED TO A FILE
+        if (!foundCondition) console.log(`Edge case condition: ${condition}`)
+        console.log(`style == '${weatherDataHandler.possibleConditions[condition]}'`);
+        console.log(`condition == '${condition}'`);
         if (weatherDataHandler.themeMode === "light"){
             console.log("updating theme -- light");
-            document.getElementsByClassName("body-light-theme")[0].style = weatherDataHandler.possibleConditions[weatherDataHandler.weatherDict.current.condition];
+            document.getElementsByClassName("body-light-theme")[0].style = weatherDataHandler.possibleConditions[condition];
         } else {
             console.log("updating theme -- dark");
-            document.getElementsByClassName("body-dark-theme")[0].style = weatherDataHandler.possibleConditions[weatherDataHandler.weatherDict.current.condition];
+            document.getElementsByClassName("body-dark-theme")[0].style = weatherDataHandler.possibleConditions[condition];
         }
     }
 

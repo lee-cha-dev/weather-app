@@ -2,6 +2,7 @@
 
 class WeatherDataHandler {
     themeMode = "light";
+    currentZip = 0;
 
     // URLS TO PRELOAD THE IMAGES
     bgImageUrls = [
@@ -46,12 +47,12 @@ class WeatherDataHandler {
 
     // DICTIONARY TO SET THE CORRECT IMAGE FOR THE BACKGROUND
     possibleConditions = {
-        "clear sky": "background-image: url('https://images.unsplash.com/photo-1622278647429-71bc97e904e8?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');",
-        "few clouds": "background-image: url('https://images.unsplash.com/photo-1599209248411-5124adbb1da2?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');",
-        "scattered clouds": "background-image: url('https://images.unsplash.com/photo-1440407876336-62333a6f010f?q=80&w=2074&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');",
-        "broken clouds": "background-image: url('https://images.unsplash.com/photo-1448032279986-c25cf997c38e?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');",
-        "overcast clouds": "background-image: url('https://images.unsplash.com/photo-1500740516770-92bd004b996e?q=80&w=2072&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');",
-        "shower rain": "background-image: url('https://images.unsplash.com/photo-1428592953211-077101b2021b?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');",
+        "sky": "background-image: url('https://images.unsplash.com/photo-1622278647429-71bc97e904e8?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');",
+        "clouds": "background-image: url('https://images.unsplash.com/photo-1599209248411-5124adbb1da2?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');",
+        // "scattered clouds": "background-image: url('https://images.unsplash.com/photo-1440407876336-62333a6f010f?q=80&w=2074&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');",
+        // "clouds": "background-image: url('https://images.unsplash.com/photo-1448032279986-c25cf997c38e?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');",
+        // "overcast clouds": "background-image: url('https://images.unsplash.com/photo-1500740516770-92bd004b996e?q=80&w=2072&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');",
+        // "shower rain": "background-image: url('https://images.unsplash.com/photo-1428592953211-077101b2021b?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');",
         "rain": "background-image: url('https://images.unsplash.com/photo-1534274988757-a28bf1a57c17?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');",
         "thunderstorm": "background-image: url('https://images.unsplash.com/photo-1429552077091-836152271555?q=80&w=1970&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');",
         "snow": "background-image: url('https://images.unsplash.com/photo-1547754980-3df97fed72a8?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');",
@@ -62,13 +63,13 @@ class WeatherDataHandler {
     // A FUNCTION WILL NEED TO BE CALLED IN ORDER TO MATCH THE CORRECTION PRIMARY CONDITION FOR ALL SUB-CONDITIONS
 
     conditionList = [
-        "clear sky",
-        "few clouds",
-        "scattered clouds",
-        "broken clouds",
-        "overcast clouds",
-        "shower rain",
+        "sky",
+        "clouds",
+        // "clouds",
+        // "clouds",
+        // "overcast clouds",
         "rain",
+        // "rain",
         "thunderstorm",
         "snow",
         "mist"
@@ -201,5 +202,9 @@ class WeatherDataHandler {
         }
         // UPDATE THE CURRENT DAY ELEMENTS
         this.appController.updateWeatherGUI();
+    }
+
+    updateZip(zip){
+        this.currentZip = zip;
     }
 }

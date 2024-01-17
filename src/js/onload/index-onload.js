@@ -25,6 +25,7 @@ function indexOnload(){
 
     // THEME COOKIES
     handleCookies();
+    handleZipCookies();
 
     // EVENT LISTENERS
     //------------------------------------------------------------------------------------------------------------//
@@ -55,6 +56,7 @@ function indexOnload(){
 
                 // GET THE WEATHER DATA FOR THE DATA PROVIDED AFTER CHECK FOR VALID ZIP
                 getWeatherFromAPI(evt, zip);
+                createZipCookies(zip)
 
                 // CLOSE THE MOBILE ELEM ON SUBMIT
                 if (window.innerWidth <= 750) closeZipMobile();
@@ -83,7 +85,13 @@ function indexOnload(){
     mobileZipInputHandler();
 
     // LOAD IN A DEFAULT ZIP TO POPULATE THE PAGE WITH REAL TIME DATA
-    weatherDataHandler.getWeatherData(85001);
+    console.log(`Current Zip: ${weatherDataHandler.currentZip}`)
+    if (weatherDataHandler.currentZip === 0){
+        weatherDataHandler.getWeatherData(85001);
+    } else {
+        weatherDataHandler.getWeatherData(weatherDataHandler.currentZip)
+    }
+
 
 }
 
@@ -266,4 +274,8 @@ function setLightTheme(){
 
     // UPDATE COOKIES
     setThemeCookies("theme", "light", 90);
+}
+
+function setZip(zip){
+    weatherDataHandler.updateZip(zip);
 }
