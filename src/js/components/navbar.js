@@ -25,7 +25,7 @@ const Navbar = () => {
     // PASS NAVIGATION PATHS INTO HTML ELEMENT(S).
     const nav =
         "<nav id='navbar' class='navbar'>" +
-        "   <a id='logo-link' class='underline-hover-right' href=" + navPaths[0] + ">&lt; WeatherApp /&gt;</a>" +
+        "   <a id='logo-link' class='underline-hover-right' href=" + navPaths[0] + ">&lt; ZipWeather /&gt;</a>" +
         "   <section id='zip-section' class='zip-section zip-section-active'>" +
         "       <label class='zip-section-label'>Zip Code: </label>" +
         "       <input class='zip-code-value' id='zipCodeValue' placeholder='Enter the Zip' />" +
