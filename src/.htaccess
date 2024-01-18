@@ -1,5 +1,4 @@
 # mod_rewrite starts here
-
 RewriteEngine on
 
 # DOES NOT APPLY TO EXISTING DIRECTORIES WITH THE SAME NAME AS A FILE

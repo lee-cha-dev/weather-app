@@ -9,10 +9,12 @@ const createThemeCookies = (themeType) => {
 // THEN GET THE COOKIE BASED ON THE DICTIONARY NAME -- TO DO ITEM --
 const getThemeCookies = () => {
     const decodedCookie = decodeURIComponent(document.cookie);
-
+    let retVal = [];
     const cookies = decodedCookie.split("; ");
-
-    return cookies[0].split("=");
+    cookies.forEach(cookie => {
+        if (cookie.includes("theme")) retVal = cookie.split("=")
+    });
+    return retVal
 }
 
 const setThemeCookies = (name, value, daysToExpiration) => {
@@ -33,6 +35,7 @@ const deleteThemeCookies = () => {
 
 const handleCookies = () => {
     const themeCookie = getThemeCookies();
+    console.log(`!!!!${themeCookie}!!!!!!`)
     if (themeCookie.length === 2){
         // COOKIE ALREADY EXISTS -- SET THEME
         switch (themeCookie[1]) {

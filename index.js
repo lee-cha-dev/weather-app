@@ -36,8 +36,6 @@ app.get('/data', (req, res) => {
 });
 
 app.post('/weather-data', (req, res) => {
-    console.log("Zip: " + req.body.zip);
-
     let weatherUrlLatLon = `https://api.openweathermap.org/geo/1.0/zip?zip=${req.body.zip}&appid=${API_KEY}`;
     let data = { data: "No Data For You" };
     console.log(`Request Weather data about ${req.body.zip} from URL:\n${weatherUrlLatLon}`);
@@ -48,7 +46,6 @@ app.post('/weather-data', (req, res) => {
         url: weatherUrlLatLon,
         responseType: 'json'
     }).then(res1 => {
-        // console.log(res1.data);
         data.zipData = res1.data;
 
         let weatherUrl =
@@ -61,7 +58,6 @@ app.post('/weather-data', (req, res) => {
             url: weatherUrl,
             responseType: 'json'
         }).then(res2 => {
-            // console.log(res2.data);
             data.weatherData = res2.data;
 
             // THIRD/LAST CALL FOR FORECAST DATA
@@ -69,7 +65,6 @@ app.post('/weather-data', (req, res) => {
                 url: weatherForecastUrl,
                 responseType: 'json'
             }).then(res3 => {
-                // console.log(res3.data);
                 data.forecastData = res3.data;
                 console.log(`Sending weather data for ${req.body.zip} to Client now.`)
                 // THIS IS THE LAST CALL - SEND DATA BACK FROM THE RES (NOT RES1, RES2, OR RES3)

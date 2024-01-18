@@ -7,14 +7,10 @@ let weatherDataHandler = new WeatherDataHandler();
 
 // NEED TO ADD EVENT LISTENERS TO HANDLE MINIMIZE/MAXIMIZE TO ADJUST FROM MOBILE->DESKTOP->BACK
 function indexOnload(){
-    console.log("Body Loaded\n");
-
     // GET BODY ELEMENT
     const content = document.getElementById('body-content');
-    console.log(window.location.href);
     let dir = window.location.href;
     let dirArr = dir.split('/');
-    console.log(dirArr);
 
     // HANDLING PAGE TO LOAD
     if (dev === false){
@@ -85,14 +81,12 @@ function indexOnload(){
     mobileZipInputHandler();
 
     // LOAD IN A DEFAULT ZIP TO POPULATE THE PAGE WITH REAL TIME DATA
-    console.log(`Current Zip: ${weatherDataHandler.currentZip}`)
+    console.log(weatherDataHandler.currentZip)
     if (weatherDataHandler.currentZip === 0){
         weatherDataHandler.getWeatherData(85001);
     } else {
         weatherDataHandler.getWeatherData(weatherDataHandler.currentZip)
     }
-
-
 }
 
 function mobileZipInputHandler(){
@@ -166,8 +160,6 @@ function getWeatherFromAPI(evt, zip){
     // GET THE WEATHER DATA FOR THE DATA PROVIDED AFTER CHECK FOR VALID ZIP
     if (evt.key === "Enter"){
         if (zip.length === 5){
-            console.log(zip);
-
             // CALL GET WEATHER TO UPDATE THE WEATHER DATA
             // THE CONTROLLER CLASS OBJ WITHIN WEATHER DATA WILL
             // HANDLE UPDATING THE GUI ELEMENTS
@@ -192,11 +184,9 @@ function devNav(dirArr, content){
     // HANDLING PAGE TO LOAD
     switch (dirArr[dirArr.length - 1]){
         case "portfolio.html":          // LOAD PORTFOLIO CONTENT
-            console.log("Portfolio");
             content.innerHTML += Portfolio();
             break;
         default:                        // LOAD LANDING PAGE
-            console.log("Home Page");
             content.innerHTML += About();
     }
 }
@@ -239,8 +229,6 @@ function setDarkTheme(){
     // TOGGLE THE MOBILE ICON CLASS
     document.getElementById("zip-mobile-button").classList.remove("light-icon");
     document.getElementById("zip-mobile-button").classList.add("dark-icon");
-
-    console.log("dark-theme");
 
     // UPDATE COOKIES
     setThemeCookies("theme", "dark", 90);
