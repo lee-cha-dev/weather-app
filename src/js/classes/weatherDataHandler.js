@@ -65,11 +65,7 @@ class WeatherDataHandler {
     conditionList = [
         "sky",
         "clouds",
-        // "clouds",
-        // "clouds",
-        // "overcast clouds",
         "rain",
-        // "rain",
         "thunderstorm",
         "snow",
         "mist"
@@ -112,7 +108,8 @@ class WeatherDataHandler {
             sunrise: "",
             sunset: "",
             city: "",
-            state: ""
+            state: "",
+            icon: ""
         },
         forecast: []
     };
@@ -187,6 +184,7 @@ class WeatherDataHandler {
         this.weatherDict.current.sunset = this.weatherData["sys"]["sunset"];
         this.weatherDict.current.city = this.zipData["name"];
         this.weatherDict.current.state = this.weatherData["name"];
+        this.weatherDict.current.icon = this.weatherData["weather"][0]["icon"]
 
         // UPDATE FORECAST -- CLEAR THE FORECAST ARRAY FIRST
         this.weatherDict.forecast = [];

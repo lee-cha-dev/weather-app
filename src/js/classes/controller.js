@@ -32,6 +32,8 @@ class Controller {
             this.getFirstLettersCapitalized(weatherDataHandler.weatherDict.current.condition);
         document.getElementById("current-place").innerHTML =
             `${weatherDataHandler.weatherDict.current.city}, ${weatherDataHandler.weatherDict.current.state}`
+        document.getElementById("weather-icon").src =
+            `https://openweathermap.org/img/wn/${weatherDataHandler.weatherDict.current.icon}@4x.png`;
 
         // CURRENT DETAILS SECTION
         document.getElementById("detail-tile-value-Humidity").innerHTML =
@@ -94,6 +96,7 @@ class Controller {
             console.log("updating theme -- dark");
             document.getElementsByClassName("body-dark-theme")[0].style = weatherDataHandler.possibleConditions[condition];
         }
+        // HANDLE LOADING PAGE
         if (this.firstLoad){
             document.getElementById("loading-page").style.display = "none";
             document.getElementById("main-body").classList.remove("main-body-loading");
