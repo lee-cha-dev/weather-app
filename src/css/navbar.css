@@ -6,12 +6,14 @@
 
     display: flex;
     gap: 20px;
-    width: 100vw;
+    width: 100%;
     height: 7vh;
     align-items: center;
     background-color: black;
     box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px;
     position: fixed;
+    left: 0;
+    top: 0;
     font-family: 'Roboto', sans-serif;
     animation: navbar-anim var(--anim-time) ease-in-out 0.1s;
     transition: opacity var(--transition-time) ease-in-out;

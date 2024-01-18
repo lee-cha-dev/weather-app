@@ -5,6 +5,7 @@
     align-items: center;
     margin: 1vh 12vw 10vh;
     font-family: 'Roboto', sans-serif;
+    overflow: hidden;
 }
 
 .forecast-section-wrapper {

@@ -3,8 +3,8 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    margin: 1vh 12vw 0;
     font-family: 'Roboto', sans-serif;
+    overflow: hidden;
 }
 
 .current-details-wrapper {

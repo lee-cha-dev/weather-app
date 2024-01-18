@@ -5,6 +5,7 @@
 class Controller {
     date = new Date();
     day = this.date.getDay();
+    firstLoad = true;
 
     forecastArr = [
         "one",
@@ -92,6 +93,11 @@ class Controller {
         } else {
             console.log("updating theme -- dark");
             document.getElementsByClassName("body-dark-theme")[0].style = weatherDataHandler.possibleConditions[condition];
+        }
+        if (this.firstLoad){
+            document.getElementById("loading-page").style.display = "none";
+            document.getElementById("main-body").classList.remove("main-body-loading");
+            this.firstLoad = false;
         }
     }
 

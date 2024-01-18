@@ -2,6 +2,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 0;
+    padding: 0;
 }
 
 .heading h1{
@@ -22,6 +24,31 @@ body {
     align-items: center;
     background-color: lightgrey;
     color: black;
+    overflow: hidden;
+}
+
+.loading-page {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    background-color: lightgrey;
+    color: black;
+    overflow: hidden;
+}
+
+.body-loading{
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+}
+
+.main-body-loading {
+    height: 100vh;
     overflow: hidden;
 }
 
