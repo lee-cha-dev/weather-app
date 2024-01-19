@@ -56,11 +56,20 @@ class WeatherDataHandler {
         "rain": "background-image: url('https://images.unsplash.com/photo-1534274988757-a28bf1a57c17?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');",
         "thunderstorm": "background-image: url('https://images.unsplash.com/photo-1429552077091-836152271555?q=80&w=1970&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');",
         "snow": "background-image: url('https://images.unsplash.com/photo-1547754980-3df97fed72a8?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');",
-        "mist": "background-image: url('https://images.unsplash.com/photo-1485236715568-ddc5ee6ca227?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');"
+        "mist": "background-image: url('https://images.unsplash.com/photo-1485236715568-ddc5ee6ca227?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');",
+        "smoke": "background-image: url('https://images.unsplash.com/photo-1585644156378-72d15fa33be5?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');",
+        "haze": "background-image: url('https://images.unsplash.com/photo-1533757704860-384affeed946?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');",
+        "dust": "background-image: url('https://images.unsplash.com/photo-1662377824580-a540e7728635?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');",
+        "fog": "background-image: url('https://images.unsplash.com/photo-1485236715568-ddc5ee6ca227?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');",
+        "sand": "background-image: url('https://images.unsplash.com/photo-1662377824580-a540e7728635?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');",
+        "ash": "background-image: url('https://images.unsplash.com/photo-1470260749628-75a34921a98a?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')",
+        "squall": "background-image: url('https://images.unsplash.com/photo-1429552077091-836152271555?q=80&w=1970&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');",
+        "tornado": "background-image: url('https://images.unsplash.com/photo-1695605117745-ae4e5d85dfb3?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')"
     };
 
     // NEED TO EXPAND ON THE CONDITIONS -> THERE ARE NUMEROUS EXPANDED CONDITIONS UNDER RAIN, THUNDERSTORM, ETC.
     // A FUNCTION WILL NEED TO BE CALLED IN ORDER TO MATCH THE CORRECTION PRIMARY CONDITION FOR ALL SUB-CONDITIONS
+    // NEED TO ADD SMOKE, HAZE, DUST, FOG, SAND, ASH, SQUALL, TORNADO
 
     conditionList = [
         "sky",
@@ -68,7 +77,15 @@ class WeatherDataHandler {
         "rain",
         "thunderstorm",
         "snow",
-        "mist"
+        "mist",
+        "smoke",
+        "haze",
+        "dust",
+        "fog",
+        "sand",
+        "ash",
+        "squall",
+        "tornado"
     ]
 
     // REFS:
@@ -90,6 +107,16 @@ class WeatherDataHandler {
     //  -- CHANDLER CRUTTENDEN: CHANPHOTO
     // MIST: https://unsplash.com/photos/bare-tree-between-road-7CME6Wlgrdk
     //  -- ANNIE SPRATT: ANNIESPRATT
+    // DUST: https://unsplash.com/photos/a-tree-in-a-foggy-field-1r1C-vg47Cg
+    //  -- PETER STRYDOM: PETERSTRYDOM
+    // HAZE: https://unsplash.com/photos/white-cotton-on-white-textile-jZc5eTXnYLU
+    //  -- CORINA RAINER: CORINA_RAINER_
+    // FOG: https://unsplash.com/photos/grayscale-photography-of-fog-covered-mountain-M6PJrAd26M0
+    //  -- DAMON LAM: DAYDAY95
+    // ASH: https://unsplash.com/photos/tree-surrounded-by-fog-at-daytime-geZWtn67V9U
+    //  -- Bjørn Tore Økland: bearthor
+    // TORNADO: https://unsplash.com/photos/a-large-tornado-is-coming-down-the-road-onCIfj_UIeQ
+    //  -- GREG JOHNSON: TORNADOGREG
 
     // DICT TO HOLD CURRENT DAY WEATHER DATA AND FORECAST DATA
     weatherDict = {
