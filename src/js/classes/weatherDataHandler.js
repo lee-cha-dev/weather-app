@@ -184,6 +184,7 @@ class WeatherDataHandler {
                 console.log(data.weatherData);
                 console.log("---------------------------------");
                 console.log(data.forecastData);
+                console.log("---------------------------------");
 
                 // STORE THE DATA LOCALLY
                 this.weatherData = data.weatherData;

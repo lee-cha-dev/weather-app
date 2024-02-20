@@ -1,13 +1,14 @@
 
-const aboutElements =
-    "<div class='main-body main-body-loading' id='main-body'>" +
-        Navbar() +
-        MainSection() +
-        CurrentDetailsSection() +
-        ForecastSection() +
-    "</div>";
-
 const About = () => {
+    const aboutElements = `
+        <div class='main-body main-body-loading' id='main-body'>
+            ${Navbar()}
+            ${MainSection()}
+            ${CurrentDetailsSection()}
+            ${ForecastSection()}
+        </div>`;
+
+
     return (aboutElements);
 }
 

@@ -23,18 +23,19 @@ const Navbar = () => {
     }
 
     // PASS NAVIGATION PATHS INTO HTML ELEMENT(S).
-    const nav =
-        "<nav id='navbar' class='navbar'>" +
-        "   <a id='logo-link' class='underline-hover-right' href=" + navPaths[0] + ">&lt; ZipWeather /&gt;</a>" +
-        "   <section id='zip-section' class='zip-section zip-section-active'>" +
-        "       <label class='zip-section-label'>Zip Code: </label>" +
-        "       <input class='zip-code-value' id='zipCodeValue' placeholder='Enter the Zip' />" +
-        "   </section>" +
-        "   <span id='exit-zip-mobile' onclick='closeZipMobile()' style='display: flex;' class='theme-icon material-symbols-outlined exit-zip-mobile'>close</span>" +
-        "   <span  id='zip-mobile-button' onclick='zipMobileButton()' class='theme-icon material-symbols-outlined zip-mobile-button'>menu</span>" +
-        "   <span id='light-icon' onclick='setLightTheme()' class='theme-icon material-symbols-outlined light-icon'>light_mode</span>" +
-        "   <span id='dark-icon' onclick='setDarkTheme()' class='theme-icon material-symbols-outlined dark-icon'>dark_mode</span>" +
-        "</nav>";
+    const nav = `
+        <nav id='navbar' class='navbar'>
+           <a id='logo-link' class='underline-hover-right' href='${navPaths[0]}'>&lt; ZipWeather /&gt;</a>
+           <section id='zip-section' class='zip-section zip-section-active'>
+               <label class='zip-section-label'>Zip Code: </label>
+               <input class='zip-code-value' id='zipCodeValue' placeholder='Enter the Zip' />
+           </section>
+           <span id='exit-zip-mobile' onclick='closeZipMobile()' style='display: flex;' class='theme-icon material-symbols-outlined exit-zip-mobile'>close</span>
+           <span id='zip-mobile-button' onclick='zipMobileButton()' class='theme-icon material-symbols-outlined zip-mobile-button'>menu</span>
+           <span id='light-icon' onclick='setLightTheme()' class='theme-icon material-symbols-outlined light-icon'>light_mode</span>
+           <span id='dark-icon' onclick='setDarkTheme()' class='theme-icon material-symbols-outlined dark-icon'>dark_mode</span>
+        </nav>`;
+
 
     // RETURN THE NAVBAR
     return (nav);
